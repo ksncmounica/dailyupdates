@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TO DO LIST</title>
+	<style type="text/css">
+	html{
+		width: 100%;
+		height: 100%;
+	}
+	body{
+		width: 100%;
+		height: 100%;
+	}
+	#div1{
+		position: relative;
+		background-color: #669999;
+		width: 100%;
+		height: 10%;
+	}
+	#div2{
+		margin-top: -20px;
+		position: relative;
+		background-color: white;
+		margin-left: 10%;
+		width: 80%;
+		height: 90%;
+	}
+	#main_nav{
+		position: relative;
+		background-color: transparent;
+		margin-left: 5%;
+		width: 85%;
+		height: 10%;
+		top: 7px;
+	}
+	#main_nav #Add, #MyTasks, #History, #Settings, #Logout{
+		display: inline-block;
+		position: relative;
+		color: white;
+		margin: -1px;
+        margin-left: 30px;
+    	font-family: "myriad-pro-1","myriad-pro-2",sans-serif;
+    	font-style: normal;
+   		font-weight: 300;
+    	font-size: 20px;
+    	line-height: 44px;
+    	height: 34px;
+    	vertical-align: middle;
+    	text-align: center;
+    	background-color: transparent;
+    	top: 7px;
+	}
+	#main_nav #Logout{
+		margin-right: 10%;
+		display: inline-block;
+		float: right;
+		color: white;
+   }
+    #thumbnails{
+    color:black;
+    line-height: 22px;
+    background-color:white;
+    position: relative;
+    width: 100%;
+    height: 10%;
+   
+   }
+   #preview{
+
+   	background-color:white;
+    position: relative;
+    margin-left: 15%;
+    font-family: "myriad-pro-1","myriad-pro-2",sans-serif;
+    font-style: normal;
+   	font-weight: 300;
+    font-size: 20px;
+    line-height: 44px;
+    width: 55%;
+    height: 40%;
+    top:20px;
+   }
+   #preview1{
+
+   	background-color:white;
+    position: relative;
+    margin-left: 15%;
+    font-family: "myriad-pro-1","myriad-pro-2",sans-serif;
+    font-style: normal;
+   	font-weight: 300;
+    font-size: 20px;
+    line-height: 44px;
+    width: 55%;
+    height: 40%;
+    top:20px;
+   }
+   #date{
+		position: relative;
+		background-color: transparent;
+		text-align: center;
+		top: 3px;
+	}
+    #day, #dd{
+		display: inline-block;
+		color: black;
+		text-align: center;
+    	font-family: "myriad-pro-1","myriad-pro-2",sans-serif;
+    	font-style: normal;
+   		font-weight: 500;
+    	font-size: 20p;
+   		margin-top: 18px;
+    	background-color: transparent;
+    	
+	}
+	#date{
+		
+		position: relative;
+		
+		margin-right: 5%;
+        margin-left: 0%;
+    	font-family: "myriad-pro-1","myriad-pro-2",sans-serif;
+    	font-style: normal;
+   		font-weight: 500;
+    	font-size: 20px;
+    	line-height: 22px;
+    	height: 34px;	
+    	background-color: transparent;
+    	
+	}
+
+ul#main_nav li a{
+		color: white;
+		text-decoration: none;
+	}
+	input[type=checkbox]:checked + label.strikethrough{
+  text-decoration: line-through;
+}
+table{
+	width: 100%;
+	position: relative;
+	font-size: 15px;
+	margin-left: 5%;
+	vertical-align: middle;
+	text-align: center;
+}
+#tab{
+	width: 100%;
+	position: relative;
+	line-height: 22px;
+	font-size: 15px;
+	margin-left: 5%;
+	vertical-align: middle;
+	text-align: center;
+}
+
+	</style>
+
+
+</head>
+<body>
+
+ <div id="div1" style="width:100%;">
+ 			<ul id="main_nav">
+ 				<li id="Add"><a onclick="trackEventShort('div1','click','Add');" target="_self" href="file:///C:/Users/PCS-25/Desktop/app/todo1.html" >Add</a></li>
+ 				<li id="MyTasks"><a onclick="trackEventShort('div1','click','MyTasks');" target="_self" href="file:///C:/Users/PCS-25/Desktop/app/mytasks1.html" >My Tasks</a></li>
+ 				<li id="History">History</li>
+ 				<li id="Settings">Settings</li>
+ 				<li id="Logout">Log out</li>
+ 			</ul>
+ 		</div>
+ <div id="div2">
+ 	<div id="thumbnails" >
+ 	<ul id="date">
+ 				<li id="day">Add event details</p></li>
+ 	</ul>
+        </div>
+    <div id="preview"> 
+     
+       <table>
+       	<tr>
+       		<td>
+       			Name:
+       		</td>
+       		<td>
+       			<input id="i1" type="text" value="" />
+       		</td>
+       	</tr>
+       	<tr>
+       		<td>
+       			Date:
+       		</td>
+       		<td>
+       			<input id="i2" type="date" value="" />
+       		</td>
+       	</tr>
+       	<tr>
+       		<td>
+       			Description:
+       		</td>
+       		<td>
+       			<input id="i3" type="text" value="" />
+       		</td>
+       	</tr>
+       	<tr>
+       		
+    		<td><input id="btn" type="button" value="submit" onclick="set1();" /></td> 
+       	</tr>
+       </table>
+       
+    </div> 
+    <div id="preview1">
+    </div> 
+
+ </div>
+<script>
+
+function set1() { 
+
+var todos = [];
+var todo ={};
+
+       
+
+            todo.name1 = document.getElementById("i1").value; 
+            todo.date1 = document.getElementById("i2").value; 
+            todo.desc1 = document.getElementById("i3").value; 
+          todos = JSON.parse(localStorage.getItem('todos'));
+           // todos=localStorage.getItem('todos');
+	        todos.push(todo);
+ 	      localStorage.setItem('todos', JSON.stringify(todos));
+			var key = "";
+			var i=0;
+ 	       var table="<table border='1' >";
+ 	      todos = JSON.parse(localStorage.getItem('todos'));
+ 	       console.log(todos);
+ 	   for (var i = 0; i < todos.length; i++) 
+ 	   { 
+ 	  	     key = todos[i];
+            table+="<tr><td>" + key.name1 + "</td><td>"
+                    + key.date1 + "</td><td>"
+                    + key.desc1 + "</td><td><input type='image' src='edit.png'style='width:20px; height:10px;'/></td><td><input type='image' src='del.png' style='width:20px; height:10px;'/></td></tr>";
+      }
+     table+="</table>";
+     var section = document.getElementById("preview1");
+     section.innerHTML = table; 
+ 
+   }
+</script>
+</body>
+</html>

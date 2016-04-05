@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TO DO LIST</title>
+	<style type="text/css">
+html{ 
+
+		width: 100%;
+		height: 100%;
+	}
+	body{
+
+		width: 100%;
+		height: 100%;
+	}
+	#div1{
+		position: relative;
+		background-color: #669999;
+		width: 100%;
+		height: 10%;
+	}
+	#div2{
+		margin-top: -20px;
+		position: relative;
+		background-color: #9ae5e5;
+		margin-left: 10%;
+		width: 80%;
+		height: 90%;
+	}
+	#main_nav{
+		position: relative;
+		background-color: transparent;
+		margin-left: 5%;
+		width: 85%;
+		height: 10%;
+		top: 7px;
+	}
+	#main_nav #Add, #MyTasks, #History, #Settings, #Logout{
+		display: inline-block;
+		position: relative;
+		color: white;
+		margin: -1px;
+        margin-left: 30px;
+    	font-family: "myriad-pro-1","myriad-pro-2",sans-serif;
+    	font-style: normal;
+   		font-weight: 300;
+    	font-size: 20px;
+    	line-height: 44px;
+    	height: 34px;
+    	vertical-align: middle;
+    	text-align: center;
+    	background-color: transparent;
+    	top: 7px;
+	}
+	#main_nav #Logout{
+		margin-right: 10%;
+		display: inline-block;
+		float: right;
+		color: white;
+   }
+#thumbnails{
+    margin-left: 25%;
+    line-height: 22px;
+    background-color:#d98cb3;
+    position: relative;
+    width: 45%;
+    height: 10%;
+   
+   }
+#preview{
+    margin-top: -20px;
+   	background-color: white;
+    position: relative;
+    margin-left: 25%;
+    font-family: "myriad-pro-1","myriad-pro-2",sans-serif;
+    font-style: normal;
+   	font-weight: 300;
+    font-size: 20px;
+    line-height: 44px;
+    width: 45%;
+    height: 30%;
+    top:20px;
+   }
+ 
+   #date{
+		position: relative;
+		background-color: transparent;
+		text-align: center;
+		top: 3px;
+	}
+    #day, p{
+		display: inline-block;
+		color: white;
+		text-align: center;
+    	font-family: "myriad-pro-1","myriad-pro-2",sans-serif;
+    	font-style: normal;
+   		font-weight: 500;
+    	font-size: 20p;
+   		
+    	background-color: transparent;
+    	
+	}
+	#date{
+		
+		position: relative;
+		
+		margin-right: 5%;
+        margin-left: 0%;
+    	font-family: "myriad-pro-1","myriad-pro-2",sans-serif;
+    	font-style: normal;
+   		font-weight: 500;
+    	font-size: 20px;
+    	line-height: 22px;
+    	height: 34px;	
+    	background-color: transparent;
+    	
+	}
+ul#main_nav li a{
+		color: white;
+		text-decoration: none;
+	}
+input[type=checkbox]:checked + label.strikethrough{
+  text-decoration: line-through;
+}
+#ii1, #ii2{
+	background-color: transparent;
+}
+</style>
+
+</head>
+<body>
+
+<div id="div1" style="width: 100%;">
+ 			<ul id="main_nav">
+ 				<li id="Add"><a onclick="trackEventShort('div1','click','Add');" target="_self" href="file:///C:/Users/PCS-25/Desktop/app/todo1.html" >Add</a></li>
+ 				<li id="MyTasks"><a onclick="trackEventShort('div1','click','MyTasks');" target="_self" href="file:///C:/Users/PCS-25/Desktop/app/mytasks1.html" >My Tasks</a></li>
+ 				<li id="History">History</li>
+ 				<li id="Settings">Settings</li>
+ 				<li id="Logout">Log out</li>
+ 			</ul>
+ 		</div>
+<div id="div2">
+  <div id="thumbnails" >
+ 	<ul id="date">
+ 	  <li id="day">
+ 	  <input id="ii1" type="button" value="&#65513;" onclick="leftchange();">
+ 	  <p id="dd"></p>
+ 	  <input id="ii2" type="button" value="&#65515;" onclick="rightchange();">
+ 	  </li>
+ 	</ul>
+
+  </div> 
+  <div id="preview">
+  </div>
+
+</div>
+<script>
+ var d = new Date();
+
+ document.getElementById("dd").innerHTML = d.toDateString();
+ function leftchange()
+ {
+ 	var d = new Date();
+ 	document.getElementById("dd").innerHTML = d.toDateString();
+ 	d.setDate(d.getDate() - 1);
+ 	
+ 	document.getElementById("dd").innerHTML = d.toDateString();
+ 	document.getElementById("dd").value = d;
+ 	
+ }
+ function rightchange()
+ { 
+
+ 	var d = new Date();
+ 	document.getElementById("dd").innerHTML = d.toDateString();
+ 	d.setDate(d.getDate() + 1);
+ 	document.getElementById("dd").innerHTML = d.toDateString();
+ 	document.getElementById("dd").value = d;
+ }
+</script>
+</body>
+</html>
